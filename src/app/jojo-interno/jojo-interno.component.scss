@@ -1,0 +1,130 @@
+.grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.5rem 1fr 1.5rem 1fr;
+    grid-template-rows: 1fr 1.5rem 1fr 1.5rem 1fr;
+    position: relative;
+
+    &__area {
+        position: relative;
+        cursor: pointer;
+        
+        .check {
+            opacity: 0;
+            &::after {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                top: 1.3rem;
+                left: 2.4rem;
+                width: 4rem;
+                height: 1rem;
+                border-radius: 100px;
+                transform: rotate(45deg);
+                background-color: black;
+            }
+            &::before {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                top: 1.3rem;
+                left: 2.4rem;
+                width: 4rem;
+                height: 1rem;
+                border-radius: 100px;
+                transform: rotate(135deg);
+                background-color: black;
+            }
+        }
+        
+        .ball {
+            opacity: 0;
+            display: block;
+            position: absolute;
+            top: .1rem;
+            left: 2.6rem;
+            background-color: transparent;
+            border: .8rem solid black;
+            border-radius: 50%;
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+    }
+    
+    
+
+    &__gap {
+        background-color: lightgrey;
+        border-radius: 100px;
+    }
+
+    &__gapv {
+        &__1 {
+            grid-row: 1 / 6;
+            grid-column: 2 / 3;
+        }
+
+        &__2 {
+            grid-row: 1 / 6;
+            grid-column: 4 / 5;
+        }
+    }
+
+    &__gaph {
+        &__1 {
+            grid-row: 2 / 3;
+            grid-column: 1 / 6;
+        }
+
+        &__2 {
+            grid-row: 4 / 5;
+            grid-column: 1 / 6;
+        }
+    }
+
+    
+}
+
+.big-ball {
+    display: none;
+    position: absolute;
+    top: 1.5rem;
+    left: 7.1rem;
+    background-color: transparent;
+    border: 2rem solid black;
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+}
+
+.big-check {
+    display: none;
+    &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 5.9rem;
+        left: 3.1rem;
+        width: 18rem;
+        height: 2rem;
+        border-radius: 100px;
+        transform: rotate(45deg);
+        background-color: black;
+    }
+    &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 5.9rem;
+        left: 3.1rem;
+        width: 18rem;
+        height: 2rem;
+        border-radius: 100px;
+        transform: rotate(135deg);
+        background-color: black;
+    }
+}
+
+.total {
+    position: relative;
+}
